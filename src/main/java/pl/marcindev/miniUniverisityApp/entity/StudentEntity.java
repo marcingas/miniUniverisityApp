@@ -7,7 +7,6 @@ import java.util.List;
 
 public class StudentEntity {
     private long id;
-    private String name;
-    private String surname;
-    List<CourseEntity>courses;
+    private String firstName;
+    private String lastName;
 }

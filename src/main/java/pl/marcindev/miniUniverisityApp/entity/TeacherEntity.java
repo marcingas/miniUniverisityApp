@@ -8,6 +8,6 @@ import java.util.List;
 public class TeacherEntity {
     private long id;
     private String name;
-    private String surname;
-    private List<CourseEntity> courses;
+    private String lastName;
+
 }

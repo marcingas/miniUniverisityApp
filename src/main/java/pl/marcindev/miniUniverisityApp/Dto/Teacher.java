@@ -8,6 +8,6 @@ import java.util.List;
 public class Teacher {
     private long id;
     private String name;
-    private String surname;
-    private List<Course> courses;
+    private String lastName;
+
 }
