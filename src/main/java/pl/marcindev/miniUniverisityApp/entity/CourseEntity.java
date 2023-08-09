@@ -1,12 +1,24 @@
 package pl.marcindev.miniUniverisityApp.entity;
 
-import pl.marcindev.miniUniverisityApp.Dto.Teacher;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
+@Table(name = "course")
+@Entity
+@Data
 public class CourseEntity {
-    private long id;
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
+    @Column(name = "title")
     private String title;
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
     private TeacherEntity teacher;
-    List<StudentEntity>students;
+    @ManyToMany
+    @JoinTable(name = "course_student",joinColumns = @JoinColumn(name = "course_id"),
+    inverseJoinColumns = @JoinColumn(name = "student_id"))
+    List<StudentEntity> students;
 }
